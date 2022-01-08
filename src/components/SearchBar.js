@@ -4,11 +4,13 @@ class SearchBar extends React.Component {
     state = { term: '' }
 
     onInputChange = event => {
+        console.log(event.target.value)
         this.setState({ term: event.target.value })
     }
 
     onFormSubmit = event => {
         event.preventDefault()
+        this.props.onFormSubmit(this.state.term)
         //todo Call callback from parent component
     }
 
